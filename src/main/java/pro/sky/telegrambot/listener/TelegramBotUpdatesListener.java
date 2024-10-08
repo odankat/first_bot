@@ -3,11 +3,8 @@ package pro.sky.telegrambot.listener;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
-import com.pengrad.telegrambot.request.SendMessage;
-import org.apache.naming.factory.SendMailFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.sky.telegrambot.model.NotificationTask;
 import pro.sky.telegrambot.repository.NotificationTaskRepository;
@@ -60,7 +57,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                         NotificationTask notificationTask = new NotificationTask();
                         notificationTask.setUserId(userId);
                         notificationTask.setTask(massageMather.group(3));
-                        notificationTask.setDateTime(LocalDateTime.parse(
+                        notificationTask.setNotificationDataTime(LocalDateTime.parse(
                                 massageMather.group(1),
                                 NOTIFICATION_DATA_TIME_FORMATTER
                         ));

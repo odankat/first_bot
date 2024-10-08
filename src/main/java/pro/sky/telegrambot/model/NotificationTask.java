@@ -14,7 +14,7 @@ public class NotificationTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-    private LocalDateTime dateTime;
+    private LocalDateTime notificationDataTime;
     private String task;
 
     public NotificationTask() {
@@ -23,7 +23,7 @@ public class NotificationTask {
     public NotificationTask(Long id, Long userId, LocalDateTime dateTime, String task) {
         this.id = id;
         this.userId = userId;
-        this.dateTime = dateTime;
+        this.notificationDataTime = dateTime;
         this.task = task;
     }
 
@@ -43,12 +43,12 @@ public class NotificationTask {
         this.userId = userId;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDateTime getNotificationDataTime() {
+        return notificationDataTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setNotificationDataTime(LocalDateTime notificationDataTime) {
+        this.notificationDataTime = notificationDataTime;
     }
 
     public String getTask() {
@@ -64,11 +64,11 @@ public class NotificationTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NotificationTask that = (NotificationTask) o;
-        return Objects.equals(id, that.id) && Objects.equals(userId, that.userId) && Objects.equals(dateTime, that.dateTime) && Objects.equals(task, that.task);
+        return Objects.equals(id, that.id) && Objects.equals(userId, that.userId) && Objects.equals(notificationDataTime, that.notificationDataTime) && Objects.equals(task, that.task);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, dateTime, task);
+        return Objects.hash(id, userId, notificationDataTime, task);
     }
 }
